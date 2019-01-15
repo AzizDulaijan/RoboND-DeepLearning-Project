@@ -7,7 +7,7 @@ In this project, you will train a deep neural network to identify and track a ta
 [image_0]: ./docs/misc/sim_screenshot.png
 [image_1]: images/0_run1_cam1_00038.jpeg
 [image_2]: images/1_run2_cam1_00004.jpeg
-[image_3]: images/Diagram.PNG
+[image_3]: images/Diagram.png
 
 
 ## Collecting Training Data ##
