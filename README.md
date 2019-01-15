@@ -5,8 +5,8 @@
 In this project, you will train a deep neural network to identify and track a target in simulation. So-called “follow me” applications like this are key to many fields of robotics and the very same techniques you apply here could be extended to scenarios like advanced cruise control in autonomous vehicles or human-robot collaboration in industry.
 
 [image_0]: ./docs/misc/sim_screenshot.png
-[image_1]: ./docs/misc/sim_screenshot.png
-[image_2]: ./docs/misc/sim_screenshot.png
+[image_1]: images/0_run1_cam1_00038.jpeg
+[image_2]: images/1_run2_cam1_00004.jpeg
 ![alt text][image_0] 
 
 
@@ -20,7 +20,6 @@ In this project, you will train a deep neural network to identify and track a ta
 Although I did collect training data from the simulator, I didn't use them to train the network. here are some of the training data I collected:
 
 ![alt text][image_1] 
-
 ![alt text][image_2] 
 
 one run I did put the patrol time and hero path, the other I did the fallow manully to imetate the "fallow me" 
