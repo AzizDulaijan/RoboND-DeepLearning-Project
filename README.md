@@ -15,26 +15,12 @@ In this project, you will train a deep neural network to identify and track a ta
 
 
 ## Collecting Training Data ##
-
->> if I want to collect data , I will expline it here
-Although I did collect training data from the simulator, I didn't use them to train the network. here are some of the training data I collected:
+Although I did collect training data from the simulator, I didn't use them to train the network. here are some of the processed training data I collected:
 
 ![alt text][image_1] 
 ![alt text][image_2] 
 
-one run I did put the patrol time and hero path, the other I did the fallow manully to imetate the "fallow me" 
-
-### Training Set ###
-1. Run QuadSim
-2. Click the `DL Training` button
-3. Set patrol points, path points, and spawn points. **TODO** add link to data collection doc
-3. With the simulator running, press "r" to begin recording.
-4. In the file selection menu navigate to the `data/raw_sim_data/train/run1` directory
-5. **optional** to speed up data collection, press "9" (1-9 will slow down collection speed)
-6. When you have finished collecting data, hit "r" to stop recording.
-7. To reset the simulator, hit "`<esc>`"
-8. To collect multiple runs create directories `data/raw_sim_data/train/run2`, `data/raw_sim_data/train/run3` and repeat the above steps.
-
+one run I did put the patrol points and hero path, the other I did the following manually.  
 
 ### Validation Set ###
 To collect the validation set, repeat both sets of steps above, except using the directory `data/raw_sim_data/validation` instead rather than `data/raw_sim_data/train`.
