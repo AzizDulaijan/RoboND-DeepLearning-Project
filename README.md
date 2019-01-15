@@ -16,17 +16,53 @@ Although I did collect training data from the simulator, I didn't use them to tr
 ![alt text][image_1] 
 ![alt text][image_2] 
 
-One run I did put the patrol points, hero path, and spawn points. The other I did the following manually.  
+On one run I did with the patrol points, hero path, and spawn points. The other I did the following manually.  
 
-## Implement the Segmentation Network
-I did the network training in the netbook Lab, and with the given dataset. 
+## Segmentation Network
 
->> expline the network architecture with a diagram
+### Encoders block:
+the Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features. 
+the encoders used are separable conventional layers that reduces the number of parameters in the network, which makes it more efficient. 
+
+```python
+def encoder_block(input_layer, filters, strides):
+    # TODO Create a separable convolution layer using the separable_conv2d_batchnorm() function.
+    output_layer = separable_conv2d_batchnorm(input_layer, filters, strides)
+  
+    return output_layer
+```
+
+### Conv 1x1:
+in order to keep spactial information and have a fully connected layer the 1x1 convelation layer is impelemnted. the layer lives between the Encoder layer and the decoder. 
+
+### Decoders block:
+Decoders are used to do upsampling and recover information that was lost in the Encoder layers. the block has one or more layers that enable precise localization of features.  
+
+```python
+def decoder_block(small_ip_layer, large_ip_layer, filters):
+    
+    # TODO Upsample the small input layer using the bilinear_upsample() function.
+    upsample = bilinear_upsample(small_ip_layer)
+    # TODO Concatenate the upsampled and large input layers using layers.concatenate
+    output = layers.concatenate([upsample, large_ip_layer])
+    # TODO Add some number of separable convolution layers
+    output_layer = separable_conv2d_batchnorm(output,filters)
+    
+    return output_layer
+```
+
+### skip connections:
+to better retain information the "skip connections" technic is used. using features from diffrent resolutions helps combining characteristics information with spatial information.
+
+
 
 ![alt text][image_3] 
 
 
 ## Training, Predicting and Scoring ##
+I did the network training in the netbook Lab, and with the given dataset. 
+
+
 With your training and validation data having been generated or downloaded from the above section of this repository, you are free to begin working with the neural net.
 
 ### Training your Model ###
