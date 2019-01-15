@@ -7,14 +7,7 @@ In this project, you will train a deep neural network to identify and track a ta
 [image_0]: ./docs/misc/sim_screenshot.png
 [image_1]: images/0_run1_cam1_00038.jpeg
 [image_2]: images/1_run2_cam1_00004.jpeg
-![alt text][image_0] 
-
-
-## Implement the Segmentation Network
-I did the network training in the netbook Lab, and with the given data set. 
-
->> expline the network architecture with a diagram
-
+[image_3]: images/Diagram.PNG
 
 
 ## Collecting Training Data ##
@@ -24,6 +17,14 @@ Although I did collect training data from the simulator, I didn't use them to tr
 ![alt text][image_2] 
 
 One run I did put the patrol points, hero path, and spawn points. The other I did the following manually.  
+
+## Implement the Segmentation Network
+I did the network training in the netbook Lab, and with the given dataset. 
+
+>> expline the network architecture with a diagram
+
+![alt text][image_3] 
+
 
 ## Training, Predicting and Scoring ##
 With your training and validation data having been generated or downloaded from the above section of this repository, you are free to begin working with the neural net.
