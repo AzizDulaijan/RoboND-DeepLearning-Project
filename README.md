@@ -32,7 +32,7 @@ def encoder_block(input_layer, filters, strides):
     return output_layer
 ```
 
-### Conv 1x1:
+### 1x1 convolutions:
 in order to keep spactial information and have a fully connected layer the 1x1 convelation layer is impelemnted. the layer lives between the Encoder layer and the decoder. 
 
 ### Decoders block:
@@ -59,19 +59,54 @@ to better retain information the "skip connections" technic is used. using featu
 ![alt text][image_3] 
 
 
+```python
+def fcn_model(inputs, num_classes):
+    
+    # TODO Add Encoder Blocks. 
+    # Remember that with each encoder layer, the depth of your model (the number of filters) increases.
+    encoder_layer = encoder_block(inputs, 16,2)
+    encoder_layer_2 = encoder_block(encoder_layer, 64,2)
+    encoder_layer_3 = encoder_block(encoder_layer_2, 128,2)
+    # TODO Add 1x1 Convolution layer using conv2d_batchnorm().
+    conv1x1_layer =  conv2d_batchnorm(encoder_layer_3, 128, kernel_size=1, strides=1)
+    # TODO: Add the same number of Decoder Blocks as the number of Encoder Blocks
+    decoder_layer  = decoder_block(conv1x1_layer, encoder_layer_2, 64)
+    decoder_layer_1  = decoder_block(decoder_layer, encoder_layer, 32)
+    decoder_layer_2  = decoder_block(decoder_layer_1, inputs, num_classes)
+    
+    # The function returns the output layer of your model. "x" is the final layer obtained from the last decoder_block()
+    return layers.Conv2D(num_classes, 3, activation='softmax', padding='same')(decoder_layer_2)
+```
+
 ## Training, Predicting and Scoring ##
 I did the network training in the netbook Lab, and with the given dataset. 
 
 
-With your training and validation data having been generated or downloaded from the above section of this repository, you are free to begin working with the neural net.
+with the fully convoluted network built, the network can now be trained. the training preformace can deffer based on the values of some prameters.
+
+### learning rate:
+As I tested 
+
+### batch size 
+I started training with 128 bachs in bigning, but I soon relize it the training time was taking 14-15 for each epoch. so I started lowring the size and the result was not very diffrent, so I ended with 16. 
+### num_epochs
+### steps_per_epoch
 
 ### Training your Model ###
 **Prerequisites**
+
+
+
 To train complete the network definition in the `model_training.ipynb` notebook and then run the training cell with appropriate hyperparameters selected. 
 
 After the training run has completed, your model will be stored in the `data/weights` directory as an [HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) file, and a configuration_weights file. As long as they are both in the same location, things should work. 
 
 ## Scoring ##
+
+>> show results
+
+
+## Limitations:
 
 ## Experimentation: Testing in Simulation
 1. Copy your saved model to the weights directory `data/weights`.
