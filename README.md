@@ -9,7 +9,13 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_2]: images/1_run2_cam1_00004.jpeg
 [image_3]: images/Diagram_2.png
 [image_4]: images/test_5.PNG
-[image_5]: images/test_(2).PNG
+[image_5]: images/test_5.PNG
+[image_6]: images/test_(1).PNG
+[image_7]: images/test_(2).PNG
+[image_8]: images/test_nn.PNG
+[image_9]: images/test_nn_1.PNG
+[image_10]: images/test_nn_2.PNG
+
 
 
 ## Collecting Training Data ##
@@ -121,7 +127,7 @@ steps_per_epoch = 200
 validation_steps = 50
 workers = 2
 
-![alt text][image_5] 
+![alt text][image_6] 
 
 loss: 0.0197 - val_loss: 0.0257
 
@@ -137,7 +143,7 @@ validation_steps = 50
 workers = 2
 
 
-![alt text][image_5] 
+![alt text][image_7] 
 
  loss: 0.0148 - val_loss: 0.0223
 results:
@@ -145,18 +151,17 @@ results:
 closed range: number true positives: 539, number false positives: 0, number false negatives: 0
 the average IoU for the hero is 0.8917756054110004. 
 
-### Image here
+![alt text][image_9] 
 
 patrolling with no trarget: number true positives: 0, number false positives: 74, number false negatives: 0
 as you can tell the average IoU for the hero is 0.0.
 
-### image here
+![alt text][image_8] 
 
 far range target: number true positives: 134, number false positives: 3, number false negatives: 167
 the average IoU for the hero is 0.22613506447592274, witch propably the number that holding the preformace down.
 
-### image here
-
+![alt text][image_10] 
 
 
 Sum all the true positives: 0.7339149400218102
