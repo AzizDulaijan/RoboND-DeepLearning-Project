@@ -185,6 +185,6 @@ As I stated before when the target was far from the drone is where the network i
 
 I would also like to run the training on different hardware , and cloud platforms to see how training time would vary
 
-### note:
-the "model_training.ipynb" and its  html version can be found in the code folder. and the weights can be found under the data folder. 
+### Note:
+The "model_training.ipynb" and its  html version can be found in the code folder. and the weights can be found under the data folder. 
 
