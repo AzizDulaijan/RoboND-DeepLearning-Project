@@ -7,7 +7,7 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_0]: ./docs/misc/sim_screenshot.png
 [image_1]: images/0_run1_cam1_00038.jpeg
 [image_2]: images/1_run2_cam1_00004.jpeg
-[image_3]: images/Diagram.png
+[image_3]: images/Diagram_2.png
 [image_4]: images/test_5.PNG
 [image_5]: images/test_(2).PNG
 
@@ -107,24 +107,71 @@ loss: 0.0148 - val_loss: 0.0223
 ### num_epochs
 At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabled or not. I do that until I see the final results starts increasing. 
 
-In my the run that I got the best score (0.41) I did start with 50 epochs , than 20 epochs with
-
-
-### Training your Model ###
-**Prerequisites**
-
-
-
-To train complete the network definition in the `model_training.ipynb` notebook and then run the training cell with appropriate hyperparameters selected. 
-
-After the training run has completed, your model will be stored in the `data/weights` directory as an [HDF5](https://en.wikipedia.org/wiki/Hierarchical_Data_Format) file, and a configuration_weights file. As long as they are both in the same location, things should work. 
 
 ## Scoring ##
 
->> show results
+In my the run that I got the best score (0.41) I did trained the network twice, here are the two runs and its results:
+
+first training run:
+
+learning_rate = 0.01
+batch_size = 16
+num_epochs = 50
+steps_per_epoch = 200
+validation_steps = 50
+workers = 2
+
+![alt text][image_5] 
+
+loss: 0.0197 - val_loss: 0.0257
+
+Final score: 0.378018058452
+
+secound training run:
+
+learning_rate = 0.01
+batch_size = 16
+num_epochs = 20
+steps_per_epoch = 500
+validation_steps = 50
+workers = 2
+
+
+![alt text][image_5] 
+
+ loss: 0.0148 - val_loss: 0.0223
+results:
+
+closed range: number true positives: 539, number false positives: 0, number false negatives: 0
+the average IoU for the hero is 0.8917756054110004. 
+
+### Image here
+
+patrolling with no trarget: number true positives: 0, number false positives: 74, number false negatives: 0
+as you can tell the average IoU for the hero is 0.0.
+
+### image here
+
+far range target: number true positives: 134, number false positives: 3, number false negatives: 167
+the average IoU for the hero is 0.22613506447592274, witch propably the number that holding the preformace down.
+
+### image here
+
+
+
+Sum all the true positives: 0.7339149400218102
+
+IoU for the dataset that never includes the hero: 0.558955334943
+
+Final score: 0.41022567112
+
+
 
 
 ## Limitations:
+
+
+
 
 ## Experimentation: Testing in Simulation
 1. Copy your saved model to the weights directory `data/weights`.
