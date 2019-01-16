@@ -1,8 +1,8 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
-## Deep Learning Project ##
+# Deep Learning Project 
 
-In this project, you will train a deep neural network to identify and track a target in simulation. So-called “follow me” applications like this are key to many fields of robotics and the very same techniques you apply here could be extended to scenarios like advanced cruise control in autonomous vehicles or human-robot collaboration in industry.
+In this project, I will train a deep neural network to identify and track a target in a simulation. the trained network will be used to run an applications that called “follow me”.   
 
 [image_0]: ./docs/misc/sim_screenshot.png
 [image_1]: images/0_run1_cam1_00038.jpeg
@@ -22,7 +22,7 @@ On one run I did with the patrol points, hero path, and spawn points. The other 
 
 ### Encoders block:
 the Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features. 
-the encoders used are separable conventional layers that reduces the number of parameters in the network, which makes it more efficient. 
+the encoders used are separable conventional layers that reduces the number of parameters in a conventional layer, which makes it more efficient. 
 
 ```python
 def encoder_block(input_layer, filters, strides):
@@ -33,7 +33,7 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ### 1x1 convolutions:
-in order to keep spactial information and have a fully connected layer the 1x1 convelation layer is impelemnted. the layer lives between the Encoder layer and the decoder. 
+in order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. the layer lives between the Encoder layer and the decoder. 
 
 ### Decoders block:
 Decoders are used to do upsampling and recover information that was lost in the Encoder layers. the block has one or more layers that enable precise localization of features.  
@@ -52,8 +52,7 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
 ```
 
 ### skip connections:
-to better retain information the "skip connections" technic is used. using features from diffrent resolutions helps combining characteristics information with spatial information.
-
+To better retain information that was lost from encoders the "skip connections" technique is used .Using features from different resolutions helps combining characteristics information with spatial information.
 
 
 ![alt text][image_3] 
