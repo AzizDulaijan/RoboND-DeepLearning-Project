@@ -8,6 +8,7 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_1]: images/0_run1_cam1_00038.jpeg
 [image_2]: images/1_run2_cam1_00004.jpeg
 [image_3]: images/Diagram.png
+[image_4]: images/test_5.png
 
 
 ## Collecting Training Data ##
@@ -80,16 +81,19 @@ def fcn_model(inputs, num_classes):
 ## Training, Predicting and Scoring ##
 I did the network training in the netbook Lab, and with the given dataset. 
 
-
-with the fully convoluted network built, the network can now be trained. the training preformace can deffer based on the values of some prameters.
+With the fully convoluted network built, the network can now be trained. the training performance can differ based on the values of some Hyperparameters that are listed below:
 
 ### learning rate:
-As I tested 
+Lowring the learning rate should incrse the accurcy, but 
+
+
+![alt text][image_4] 
 
 ### batch size 
-I started training with 128 bachs in bigning, but I soon relize it the training time was taking 14-15 for each epoch. so I started lowring the size and the result was not very diffrent, so I ended with 16. 
+I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
+
 ### num_epochs
-### steps_per_epoch
+
 
 ### Training your Model ###
 **Prerequisites**
