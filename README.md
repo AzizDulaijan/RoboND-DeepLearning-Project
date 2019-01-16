@@ -84,8 +84,12 @@ I did the network training in the netbook Lab, and with the given dataset.
 
 With the fully convoluted network built, the network can now be trained. the training performance can differ based on the values of some Hyperparameters that are listed below:
 
+
+### batch size 
+I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
+
 ### learning rate:
-Lowring the learning rate should incrse the accurcy, but 0.001 seems too low. the below graph shows that the network stoped improvinng even after running it for 100 e_poches. but after increasing the learning rate to 0.01 I got lower than 0.2 loss, and the final results got better. 
+Lowering the learning rate should increase the accuracy, but 0.001 seems too low. the below graphs shows that the network stopped improving even after running it for 100 e_poches. but after increasing the learning rate to 0.01 I got lower than 0.2 loss, and the final results got better. 
 
 
 ![alt text][image_4] 
@@ -100,11 +104,10 @@ final score: 0.41022567112
 
 loss: 0.0148 - val_loss: 0.0223
 
-### batch size 
-I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
-
 ### num_epochs
+at the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the bigning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network has stabilized or not. I do that until I see the final resalts starts decreasing. 
 
+In my the run that I got the best socre (0.41) I did start with 50 epochs , than 20 epochs with
 
 ### Training your Model ###
 **Prerequisites**
