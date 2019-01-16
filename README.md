@@ -29,8 +29,8 @@ On one run I did with the patrol points, hero path, and spawn points. The other 
 ## Segmentation Network
 
 ### Encoders block:
-the Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features. 
-the encoders used are separable conventional layers that reduces the number of parameters in a conventional layer, which makes it more efficient. 
+The Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features. 
+The encoders used are separable conventional layers that reduces the number of parameters in a conventional layer, which makes it more efficient. 
 
 ```python
 def encoder_block(input_layer, filters, strides):
@@ -41,10 +41,10 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ### 1x1 convolutions:
-in order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. the layer lives between the Encoder block and the decoder block. 
+In order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. The layer lives between the Encoder block and the decoder block. 
 
 ### Decoders block:
-Decoders are used to do upsampling and recover information that was lost in the Encoder layers. the block has one or more layers that enable precise localization of features.  
+Decoders are used to do upsampling and recover information that was lost in the Encoder layers. The block has one or more layers that enable precise localization of features.  
 
 ```python
 def decoder_block(small_ip_layer, large_ip_layer, filters):
@@ -102,7 +102,7 @@ Lowering the learning rate should increase the accuracy, but 0.001 seems too low
 
 ![alt text][image_4] 
 
-final score: 0.329997240629
+Final score: 0.329997240629
 
 loss: 0.0233 - val_loss: 0.0398
 
@@ -119,7 +119,7 @@ At the start I was using high batch size, so it was unrealistic to run more than
 ## Scoring ##
 In my the run that I got the best score (0.41) I did trained the network twice, here are the two runs and its results:
 
-first training run:
+First training run:
 
 learning_rate = 0.01,
 batch_size = 16,
@@ -134,7 +134,7 @@ loss: 0.0197 - val_loss: 0.0257
 
 Final score: 0.378018058452
 
-secound training run:
+Secound training run:
 
 learning_rate = 0.01,
 batch_size = 16,
@@ -147,23 +147,24 @@ workers = 2
 ![alt text][image_7] 
 
  loss: 0.0148 - val_loss: 0.0223
-results:
 
-closed range: number true positives: 539, number false positives: 0, number false negatives: 0
+#### Results:
 
-the average IoU for the hero is 0.8917756054110004. 
+Closed range: number true positives: 539, number false positives: 0, number false negatives: 0
+
+The average IoU for the hero is 0.8917756054110004. 
 
 ![alt text][image_9] 
 
-patrolling with no trarget: number true positives: 0, number false positives: 74, number false negatives: 0
+patrolling with no target: number true positives: 0, number false positives: 74, number false negatives: 0
 
-as you can tell the average IoU for the hero is 0.0.
+As you can tell the average IoU for the hero is 0.0.
 
 ![alt text][image_8] 
 
-far range target: number true positives: 134, number false positives: 3, number false negatives: 167
+Far range target: number true positives: 134, number false positives: 3, number false negatives: 167
 
-the average IoU for the hero is 0.22613506447592274, witch propably the number that holding the preformace down.
+The average IoU for the hero is 0.22613506447592274, which probably the number that holding the performance down.
 
 ![alt text][image_10] 
 
