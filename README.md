@@ -9,7 +9,7 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_2]: images/1_run2_cam1_00004.jpeg
 [image_3]: images/Diagram.png
 [image_4]: images/test_5.PNG
-[image_5]: images/test_(1).PNG
+[image_5]: images/test_(2).PNG
 
 
 ## Collecting Training Data ##
@@ -91,9 +91,14 @@ Lowring the learning rate should incrse the accurcy, but 0.001 seems too low. th
 ![alt text][image_4] 
 
 final score: 0.329997240629
+
 loss: 0.0233 - val_loss: 0.0398
 
 ![alt text][image_5] 
+
+final score: 0.41022567112
+
+loss: 0.0148 - val_loss: 0.0223
 
 ### batch size 
 I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
