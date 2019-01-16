@@ -41,7 +41,7 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ### 1x1 convolutions:
-in order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. the layer lives between the Encoder layer and the decoder. 
+in order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. the layer lives between the Encoder block and the decoder block. 
 
 ### Decoders block:
 Decoders are used to do upsampling and recover information that was lost in the Encoder layers. the block has one or more layers that enable precise localization of features.  
@@ -62,9 +62,11 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
 ### skip connections:
 To better retain information that was lost from encoders the "skip connections" technique is used .Using features from different resolutions helps combining characteristics information with spatial information.
 
+Here is a diagram that demonstrate the architecture of the network:
 
-![alt text][image_3] 
+![alt text][image_3]
 
+Network model code:
 
 ```python
 def fcn_model(inputs, num_classes):
