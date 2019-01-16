@@ -91,7 +91,7 @@ I did the network training in the netbook Lab, and with the given dataset.
 With the fully convoluted network built, the network can now be trained. the training performance can differ based on the values of some Hyperparameters that are listed below:
 
 
-### batch size 
+### Batch size:
 I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
 
 ### learning rate:
@@ -106,11 +106,13 @@ loss: 0.0233 - val_loss: 0.0398
 
 ![alt text][image_5] 
 
+# edit image here
+
 final score: 0.41022567112
 
 loss: 0.0148 - val_loss: 0.0223
 
-### num_epochs
+### Num_epochs
 At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabled or not. I do that until I see the final results starts increasing. 
 
 
@@ -120,11 +122,11 @@ In my the run that I got the best score (0.41) I did trained the network twice, 
 
 first training run:
 
-learning_rate = 0.01
-batch_size = 16
-num_epochs = 50
-steps_per_epoch = 200
-validation_steps = 50
+learning_rate = 0.01,
+batch_size = 16,
+num_epochs = 50,
+steps_per_epoch = 200,
+validation_steps = 50,
 workers = 2
 
 ![alt text][image_6] 
@@ -135,11 +137,11 @@ Final score: 0.378018058452
 
 secound training run:
 
-learning_rate = 0.01
-batch_size = 16
-num_epochs = 20
-steps_per_epoch = 500
-validation_steps = 50
+learning_rate = 0.01,
+batch_size = 16,
+num_epochs = 20,
+steps_per_epoch = 500,
+validation_steps = 50,
 workers = 2
 
 
@@ -171,18 +173,8 @@ IoU for the dataset that never includes the hero: 0.558955334943
 Final score: 0.41022567112
 
 
-
-
 ## Limitations:
+Because the hero was wearing red clothes she can be easily distinguished from the background and she was the only one wearing red, this made training the network comparing with the real world easy. And sense other objects such as car, cats, dogs are not easily distinguished from the background it would require a more complicated network to achieve it. 
 
-
-
-
-## Experimentation: Testing in Simulation
-1. Copy your saved model to the weights directory `data/weights`.
-2. Launch the simulator, select "Spawn People", and then click the "Follow Me" button.
-3. Run the realtime follower script
-```
-$ python follower.py my_amazing_model.h5
-```
-
+## Future Enhancements
+As I stated before when the target was far from the drone is where the network is having the greatest difficulty. If I have the time I would collect more data that has this kind of images, then use it in the training. I would also try to test the hyperparameters more, and try to understand what is the limit of the network. 
