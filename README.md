@@ -8,7 +8,8 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_1]: images/0_run1_cam1_00038.jpeg
 [image_2]: images/1_run2_cam1_00004.jpeg
 [image_3]: images/Diagram.png
-[image_4]: images/test_5.png
+[image_4]: images/test_5.PNG
+[image_5]: images/test_(1).PNG
 
 
 ## Collecting Training Data ##
@@ -84,10 +85,15 @@ I did the network training in the netbook Lab, and with the given dataset.
 With the fully convoluted network built, the network can now be trained. the training performance can differ based on the values of some Hyperparameters that are listed below:
 
 ### learning rate:
-Lowring the learning rate should incrse the accurcy, but 
+Lowring the learning rate should incrse the accurcy, but 0.001 seems too low. the below graph shows that the network stoped improvinng even after running it for 100 e_poches. but after increasing the learning rate to 0.01 I got lower than 0.2 loss, and the final results got better. 
 
 
 ![alt text][image_4] 
+
+final score: 0.329997240629
+loss: 0.0233 - val_loss: 0.0398
+
+![alt text][image_5] 
 
 ### batch size 
 I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
