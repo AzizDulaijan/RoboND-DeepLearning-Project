@@ -147,8 +147,8 @@ workers = 2
 ![alt text][image_7] 
 
  loss: 0.0148 - val_loss: 0.0223
-
-#### Results:
+ 
+ 
 
 Closed range: number true positives: 539, number false positives: 0, number false negatives: 0
 
@@ -173,7 +173,7 @@ Sum all the true positives: 0.7339149400218102
 
 IoU for the dataset that never includes the hero: 0.558955334943
 
-Final score: 0.41022567112
+#### Final score: 0.41022567112
 
 
 ## Limitations:
