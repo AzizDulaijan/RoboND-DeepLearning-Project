@@ -87,7 +87,7 @@ def fcn_model(inputs, num_classes):
     return layers.Conv2D(num_classes, 3, activation='softmax', padding='same')(decoder_layer_2)
 ```
 
-## Training, Predicting and Scoring ##
+## Training and Scoring ##
 I did the network training in the netbook Lab, and with the given dataset. 
 
 With the fully convoluted network built, the network can now be trained. the training performance can differ based on the values of some Hyperparameters that are listed below:
@@ -114,11 +114,9 @@ final score: 0.399550650298
 loss: 0.0141 - val_loss: 0.0348
 
 ### Num_epochs
-At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabled or not. I do that until I see the final results starts increasing. 
-
+At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabilized or not. I do that until I see the final results starts decreasing. 
 
 ## Scoring ##
-
 In my the run that I got the best score (0.41) I did trained the network twice, here are the two runs and its results:
 
 first training run:
