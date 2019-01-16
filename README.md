@@ -152,16 +152,19 @@ workers = 2
 results:
 
 closed range: number true positives: 539, number false positives: 0, number false negatives: 0
+
 the average IoU for the hero is 0.8917756054110004. 
 
 ![alt text][image_9] 
 
 patrolling with no trarget: number true positives: 0, number false positives: 74, number false negatives: 0
+
 as you can tell the average IoU for the hero is 0.0.
 
 ![alt text][image_8] 
 
 far range target: number true positives: 134, number false positives: 3, number false negatives: 167
+
 the average IoU for the hero is 0.22613506447592274, witch propably the number that holding the preformace down.
 
 ![alt text][image_10] 
