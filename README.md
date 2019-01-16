@@ -180,3 +180,10 @@ Because the hero was wearing red clothes she can be easily distinguished from th
 
 ## Future Enhancements
 As I stated before when the target was far from the drone is where the network is having the greatest difficulty. If I have the time I would collect more data that has this kind of images, then use it in the training. I would also try to test the hyperparameters more, and try to understand what is the limit of the network. 
+
+
+I would also like to run the training on different hardware , and cloud platforms to see how training time would vary
+
+### note:
+the "model_training.ipynb" and its  html version can be found in the code folder. and the weights can be found under the data folder. 
+
