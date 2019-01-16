@@ -9,7 +9,7 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_2]: images/1_run2_cam1_00004.jpeg
 [image_3]: images/Diagram_2.png
 [image_4]: images/test_5.PNG
-[image_5]: images/test_5.PNG
+[image_5]: images/test_2_2.PNG
 [image_6]: images/test_(1).PNG
 [image_7]: images/test_(2).PNG
 [image_8]: images/test_nn.PNG
@@ -108,11 +108,10 @@ loss: 0.0233 - val_loss: 0.0398
 
 ![alt text][image_5] 
 
-# edit image here
 
-final score: 0.41022567112
+final score: 0.399550650298
 
-loss: 0.0148 - val_loss: 0.0223
+loss: 0.0141 - val_loss: 0.0348
 
 ### Num_epochs
 At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabled or not. I do that until I see the final results starts increasing. 
