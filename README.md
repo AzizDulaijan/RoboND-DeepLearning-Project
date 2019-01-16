@@ -105,9 +105,10 @@ final score: 0.41022567112
 loss: 0.0148 - val_loss: 0.0223
 
 ### num_epochs
-at the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the bigning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network has stabilized or not. I do that until I see the final resalts starts decreasing. 
+At the start I was using high batch size, so it was unrealistic to run more than 5 epochs. but as I lowered the batch size I started increasing the number of epochs. I start with a high number at the beginning between 20-50 for two to three times. Then I run between 5-10 epochs to see if network stabled or not. I do that until I see the final results starts increasing. 
 
-In my the run that I got the best socre (0.41) I did start with 50 epochs , than 20 epochs with
+In my the run that I got the best score (0.41) I did start with 50 epochs , than 20 epochs with
+
 
 ### Training your Model ###
 **Prerequisites**
