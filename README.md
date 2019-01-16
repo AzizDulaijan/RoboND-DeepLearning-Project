@@ -94,7 +94,7 @@ With the fully convoluted network built, the network can now be trained. the tra
 
 
 ### Batch size:
-I started training with 128 baches in beginning, but I soon realized 127 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
+I started training with 128 baches in beginning, but I soon realized 128 was too large and the training time was taking 14-15 for each epoch. so I started lowering the size until I ended with 16. Low value batch size allows me to train for more data. 
 
 ### learning rate:
 Lowering the learning rate should increase the accuracy, but 0.001 seems too low. the below graphs shows that the network stopped improving even after running it for 100 e_poches. but after increasing the learning rate to 0.01 I got lower than 0.2 loss, and the final results got better. 
