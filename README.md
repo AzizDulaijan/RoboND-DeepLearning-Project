@@ -10,8 +10,8 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_3]: images/Diagram_2.png
 [image_4]: images/test_5.PNG
 [image_5]: images/test_2_2ff.PNG
-[image_6]: images/test_(1).PNG
-[image_7]: images/test_(2).PNG
+[image_6]: images/test_1_1.PNG
+[image_7]: images/test_2_2.PNG
 [image_8]: images/test_nn.PNG
 [image_9]: images/test_nn_1.PNG
 [image_10]: images/test_nn_2.PNG
@@ -137,9 +137,9 @@ workers = 2
 
 ![alt text][image_6] 
 
-loss: 0.0197 - val_loss: 0.0257
+loss: 0.0215 - val_loss: 0.0316
 
-Final score: 0.378018058452
+Final score: 0.386678919917
 
 Secound training run:
 
@@ -150,37 +150,51 @@ steps_per_epoch = 500,
 validation_steps = 50,
 workers = 2
 
+third run: 
+
+
+learning_rate = 0.01,
+batch_size = 16,
+num_epochs = 5,
+steps_per_epoch = 200,
+validation_steps = 50,
+workers = 2
 
 ![alt text][image_7] 
 
- loss: 0.0148 - val_loss: 0.0223
+ loss: 0.0181 - val_loss: 0.0426
  
  
+#### Closed range: 
 
-Closed range: number true positives: 539, number false positives: 0, number false negatives: 0
+number true positives: 539, number false positives: 0, number false negatives: 0
 
-The average IoU for the hero is 0.8917756054110004. 
+The average IoU for the hero is 0.8719879511703909 
 
 ![alt text][image_9] 
 
-patrolling with no target: number true positives: 0, number false positives: 74, number false negatives: 0
+#### patrolling with no target: 
+
+number true positives: 0, number false positives: 159, number false negatives: 0
 
 As you can tell the average IoU for the hero is 0.0.
 
 ![alt text][image_8] 
 
-Far range target: number true positives: 134, number false positives: 3, number false negatives: 167
+#### Far range target:
 
-The average IoU for the hero is 0.22613506447592274, which probably the number that holding the performance down.
+number true positives: 177, number false positives: 6, number false negatives: 124
+
+The average IoU for the hero is 0.25327390945842015, which probably the number that holding the performance down.
 
 ![alt text][image_10] 
 
 
-Sum all the true positives: 0.7339149400218102
+Sum all the true positives: 0.7124378109452736
 
-IoU for the dataset that never includes the hero: 0.558955334943
+IoU for the dataset that never includes the hero: 0.562630930314
 
-#### Final score: 0.41022567112
+#### Final score: 0.400839548363
 
 
 ## Limitations:
