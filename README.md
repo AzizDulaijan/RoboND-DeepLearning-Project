@@ -63,11 +63,17 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
 ### skip connections:
 To better retain information that was lost from encoders the "skip connections" technique is used .Using features from different resolutions helps combining characteristics information with spatial information.
 
+### fully convolutional network (FNC):
+
+[write why did you chose 3x3 layers or and its sizes] 
+
+My thinking when chosing 3 layers for the Encoder block, for it to detect color, people from background, and recognize the hero. Also inorder for the skip connections to preform better I have to start the Encoding with a low resulution (16). while making the network depth 
+
 Here is a diagram that demonstrate the architecture of the network:
 
 ![alt text][image_3]
 
-Network model code:
+#### Network model code:
 
 ```python
 def fcn_model(inputs, num_classes):
@@ -75,14 +81,14 @@ def fcn_model(inputs, num_classes):
     # TODO Add Encoder Blocks. 
     # Remember that with each encoder layer, the depth of your model (the number of filters) increases.
     encoder_layer = encoder_block(inputs, 16,2)
-    encoder_layer_2 = encoder_block(encoder_layer, 64,2)
-    encoder_layer_3 = encoder_block(encoder_layer_2, 128,2)
+    encoder_layer_2 = encoder_block(encoder_layer, 32,2)
+    encoder_layer_3 = encoder_block(encoder_layer_2, 64,2)
     # TODO Add 1x1 Convolution layer using conv2d_batchnorm().
     conv1x1_layer =  conv2d_batchnorm(encoder_layer_3, 128, kernel_size=1, strides=1)
     # TODO: Add the same number of Decoder Blocks as the number of Encoder Blocks
     decoder_layer  = decoder_block(conv1x1_layer, encoder_layer_2, 64)
     decoder_layer_1  = decoder_block(decoder_layer, encoder_layer, 32)
-    decoder_layer_2  = decoder_block(decoder_layer_1, inputs, num_classes)
+    decoder_layer_2  = decoder_block(decoder_layer_1, inputs, 16)
     
     # The function returns the output layer of your model. "x" is the final layer obtained from the last decoder_block()
     return layers.Conv2D(num_classes, 3, activation='softmax', padding='same')(decoder_layer_2)
