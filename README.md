@@ -171,7 +171,7 @@ number true positives: 539, number false positives: 0, number false negatives: 0
 
 The average IoU for the hero is 0.8719879511703909 
 
-![alt text][image_9] 
+![alt text][image_8] 
 
 #### patrolling with no target: 
 
@@ -179,7 +179,7 @@ number true positives: 0, number false positives: 159, number false negatives: 0
 
 As you can tell the average IoU for the hero is 0.0.
 
-![alt text][image_8] 
+![alt text][image_9] 
 
 #### Far range target:
 
