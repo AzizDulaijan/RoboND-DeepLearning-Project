@@ -12,9 +12,9 @@ In this project, I will train a deep neural network to identify and track a targ
 [image_5]: images/test_2_2ff.PNG
 [image_6]: images/test_1_1.PNG
 [image_7]: images/test_2_2.PNG
-[image_8]: images/test_nn.PNG
-[image_9]: images/test_nn_1.PNG
-[image_10]: images/test_nn_2.PNG
+[image_8]: images/test_nn_11.PNG
+[image_9]: images/test_nn_22.PNG
+[image_10]: images/test_nn_33.PNG
 
 
 
