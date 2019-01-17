@@ -41,7 +41,7 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ### 1x1 convolutions:
-In order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented.The layer can keep spatial information because it can classify individual pixels in the image.The layer lives between the Encoder block and the decoder block. 
+In order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented.The layer can keep spatial information because it can classify individual pixels in the image.The layer lives between the Encoder block and the decoder block as can be seen in the diagram below. 
 
 
 ### Decoders block:
@@ -61,13 +61,11 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
 ```
 
 ### skip connections:
-To better retain information that was lost from encoders the "skip connections" technique is used .Using features from different resolutions helps combining characteristics information with spatial information.
+My thinking when choosing 3 layers for the Encoder block, is for it to detect color, people from background, and recognize the hero. Also, in order for the skip connections to perform better I have to start the Encoding with a low resolution (16). to increase the depth of the network next layers are multiplied by 2. I fallowed the 1x1 convolution layer with 3 layers in the Decoder layer to fully utilize the skip connections, and recover each pexil with its depth size. 
 
-### fully convolutional network (FNC):
+### fully convolutional network (FCN):
+My thinking when choosing 3 layers for the Encoder block, is for it to detect color, people from background, and recognize the hero. Also, for the skip connections to perform better I started the Encoding with a low resolution (16). to increase the depth of the network next layers depth size are multiplied by 2. I fallowed the 1x1 convolution layer with 3 layers in the Decoder block to fully utilize the skip connections and recover each pixel with its depth size.
 
-[write why did you chose 3x3 layers or and its sizes] 
-
-My thinking when chosing 3 layers for the Encoder block, for it to detect color, people from background, and recognize the hero. Also inorder for the skip connections to preform better I have to start the Encoding with a low resulution (16). while making the network depth 
 
 Here is a diagram that demonstrate the architecture of the network:
 
