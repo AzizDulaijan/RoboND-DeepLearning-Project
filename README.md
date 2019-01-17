@@ -61,7 +61,7 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
 ```
 
 ### skip connections:
-My thinking when choosing 3 layers for the Encoder block, is for it to detect color, people from background, and recognize the hero. Also, in order for the skip connections to perform better I have to start the Encoding with a low resolution (16). to increase the depth of the network next layers are multiplied by 2. I fallowed the 1x1 convolution layer with 3 layers in the Decoder layer to fully utilize the skip connections, and recover each pexil with its depth size. 
+To better retain information that was lost from encoders the "skip connections" technique is used .Using features from different resolutions helps combining characteristics information with spatial information.
 
 ### fully convolutional network (FCN):
 My thinking when choosing 3 layers for the Encoder block, is for it to detect color, people from background, and recognize the hero. Also, for the skip connections to perform better I started the Encoding with a low resolution (16). to increase the depth of the network next layers depth size are multiplied by 2. I fallowed the 1x1 convolution layer with 3 layers in the Decoder block to fully utilize the skip connections and recover each pixel with its depth size.
