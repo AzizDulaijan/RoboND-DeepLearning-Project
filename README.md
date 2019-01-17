@@ -41,7 +41,8 @@ def encoder_block(input_layer, filters, strides):
 ```
 
 ### 1x1 convolutions:
-In order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented. The layer lives between the Encoder block and the decoder block. 
+In order to keep spatial information and have a fully connected layer the 1x1 convolution layer is implemented.The layer can keep spatial information because it can classify individual pixels in the image.The layer lives between the Encoder block and the decoder block. 
+
 
 ### Decoders block:
 Decoders are used to do upsampling and recover information that was lost in the Encoder layers. The block has one or more layers that enable precise localization of features.  
