@@ -29,7 +29,7 @@ On one run I did with the patrol points, hero path, and spawn points. The other 
 ## Segmentation Network
 
 ### Encoders block:
-The Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features.Sense the Encoder concern is to know what is in the images not where, the spatial information is not preserved. It would be hard to recover the orginal image from narrowed down Encoded data.
+The Encoder block contain one or multiple conventional layers, that is used to extract and identify characteristics from images. each layer captures features then feeds it in to the next layer that will find more convoluted features.Sense the Encoder concern is to know what is in the images not where, the spatial information is not preserved. in order to recover spatial information we need classification in a pixel level. 
 The encoders used are separable conventional layers that reduces the number of parameters in a conventional layer, which makes it more efficient. 
 
 ```python
@@ -45,7 +45,7 @@ In order to keep spatial information and have a fully connected layer the 1x1 co
 
 
 ### Decoders block:
-Decoders are used to do upsampling and recover information that was lost in the Encoder layers. The block has one or more layers that enable precise localization of features.  
+Decoder block is used to do upsampling and reconstraction of the information that was compressed in the Encoder layers. the result is a segmanted image with the same size of the orginal. The block has one or more transposed convolotional layers that enable pixel level localization of features.  
 
 ```python
 def decoder_block(small_ip_layer, large_ip_layer, filters):
