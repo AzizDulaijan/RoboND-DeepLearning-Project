@@ -45,7 +45,8 @@ In order to keep spatial information and have a fully connected layer the 1x1 co
 
 
 ### Decoders block:
-Decoder block is used to do upsampling and reconstraction of the information that was compressed in the Encoder layers. the result is a segmanted image with the same size of the orginal. The block has one or more transposed convolotional layers that enable pixel level localization of features.  
+Decoder block is used to do upsampling and reconstruction of the information that was compressed in the Encoder layers. the result is a segmented image with the same size of the original. The block has one or more transpose convolution layers that enable pixel level reconstruction.
+
 
 ```python
 def decoder_block(small_ip_layer, large_ip_layer, filters):
